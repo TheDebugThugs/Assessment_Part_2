@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="34" nextobjectid="1">
  <tileset firstgid="1" name="ground" tilewidth="16" tileheight="16" tilecount="18" columns="3">
-  <image source="Cliff_Tile.png" width="48" height="96"/>
+  <image source="../../Tile Maps/Cliff_Tile.png" width="48" height="96"/>
  </tileset>
  <tileset firstgid="19" name="ground 2" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="Grass_Middle.png" width="16" height="16"/>
+  <image source="../../Tile Maps/Grass_Middle.png" width="16" height="16"/>
  </tileset>
  <tileset firstgid="20" name="ground 3" tilewidth="16" tileheight="16" tilecount="18" columns="3">
-  <image source="Path_Tile.png" width="48" height="96"/>
+  <image source="../../Tile Maps/Path_Tile.png" width="48" height="96"/>
  </tileset>
  <tileset firstgid="38" name="water" tilewidth="16" tileheight="16" tilecount="18" columns="3">
-  <image source="Water_Tile.png" width="48" height="96"/>
+  <image source="../../Tile Maps/Water_Tile.png" width="48" height="96"/>
  </tileset>
  <tileset firstgid="56" name="outdoor decor" tilewidth="16" tileheight="16" tilecount="84" columns="7">
-  <image source="Outdoor_Decor_Free.png" width="112" height="192"/>
+  <image source="../../Tile Maps/Outdoor_Decor_Free.png" width="112" height="192"/>
  </tileset>
  <tileset firstgid="140" name="random decor " tilewidth="16" tileheight="16" tilecount="208" columns="16">
-  <image source="objects.png" width="256" height="208"/>
+  <image source="../../Tile Maps/objects.png" width="256" height="208"/>
  </tileset>
  <tileset firstgid="348" name="walls" tilewidth="16" tileheight="16" tilecount="64" columns="8">
-  <image source="walls.png" width="128" height="128"/>
+  <image source="../../Tile Maps/walls.png" width="128" height="128"/>
  </tileset>
  <tileset firstgid="412" name="flooring" tilewidth="16" tileheight="16" tilecount="15" columns="5">
-  <image source="flooring.png" width="80" height="48"/>
+  <image source="../../Tile Maps/flooring.png" width="80" height="48"/>
  </tileset>
  <tileset firstgid="427" name="wooden" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="wooden.png" width="16" height="16"/>
+  <image source="../../Tile Maps/wooden.png" width="16" height="16"/>
  </tileset>
  <tileset firstgid="428" name="door" tilewidth="16" tileheight="16" tilecount="2" columns="2">
-  <image source="wooden_door_b.png" width="32" height="16"/>
+  <image source="../../Tile Maps/wooden_door_b.png" width="32" height="16"/>
  </tileset>
  <tileset firstgid="430" name="path" tilewidth="16" tileheight="16" tilecount="72" columns="6">
-  <image source="plains.png" width="96" height="192"/>
+  <image source="../../Tile Maps/plains.png" width="96" height="192"/>
  </tileset>
  <tileset firstgid="502" name="chest" tilewidth="16" tileheight="16" tilecount="4" columns="4">
-  <image source="chest_01.png" width="64" height="16"/>
+  <image source="../../Tile Maps/chest_01.png" width="64" height="16"/>
  </tileset>
  <tileset firstgid="506" name="NPc" tilewidth="16" tileheight="16" tilecount="540" columns="18">
-  <image source="player.png" width="288" height="480"/>
+  <image source="../../Tile Maps/player.png" width="288" height="480"/>
  </tileset>
  <tileset firstgid="1046" name="room builder" tilewidth="16" tileheight="16" tilecount="391" columns="17">
-  <image source="Room_Builder_free_16x16.png" width="272" height="368"/>
+  <image source="../../Tile Maps/Room_Builder_free_16x16.png" width="272" height="368"/>
  </tileset>
  <tileset firstgid="1437" name="room interior decor" tilewidth="16" tileheight="16" tilecount="1424" columns="16">
-  <image source="Interiors_free_16x16.png" width="256" height="1424"/>
+  <image source="../../Tile Maps/Interiors_free_16x16.png" width="256" height="1424"/>
  </tileset>
  <tileset firstgid="2861" name="bus" tilewidth="16" tileheight="16" tilecount="1521" columns="39">
-  <image source="Red_BUS_CLEAN_8D_000-sheet.png" width="630" height="630"/>
+  <image source="../../Tile Maps/Red_BUS_CLEAN_8D_000-sheet.png" width="630" height="630"/>
  </tileset>
  <layer id="14" name="Tile Layer 12" width="40" height="40">
   <data encoding="csv">
@@ -956,7 +956,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,1073741842,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
