@@ -7,22 +7,30 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 public class MenuScreen implements Screen {
     private final MyGame game;
     private OrthographicCamera camera;
     private SpriteBatch batch;
     private BitmapFont font;
+    private FitViewport viewport;
+
+    private final int MENU_WIDTH = 640;
+    private final int MENU_HEIGHT = 480;
+
 
     public MenuScreen(MyGame game) {
         this.game = game;
         
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 640, 480);
+        camera.setToOrtho(false, MENU_WIDTH, MENU_HEIGHT);
         
         batch = new SpriteBatch();
         font = new BitmapFont(); // Uses default Arial font
         font.getData().setScale(2f); // Make text bigger
+
+	viewport = new FitViewport(MENU_WIDTH, MENU_HEIGHT, camera);
     }
 
     @Override
@@ -57,7 +65,7 @@ public class MenuScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        camera.setToOrtho(false, width, height);
+       	viewport.update(width,height); 
     }
 
     @Override
