@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="36" nextobjectid="2">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="36" nextobjectid="4">
  <tileset firstgid="1" name="ground" tilewidth="16" tileheight="16" tilecount="18" columns="3">
   <image source="../Cliff_Tile.png" width="48" height="96"/>
  </tileset>
@@ -405,6 +405,7 @@
  </layer>
  <objectgroup id="35" name="Events">
   <object id="1" name="BusTicket" x="262.072" y="567.949"/>
+  <object id="3" name="Bus" x="70.75" y="32.75" width="159" height="70.75"/>
  </objectgroup>
  <layer id="9" name="entrance room decor" width="40" height="40">
   <data encoding="csv">
