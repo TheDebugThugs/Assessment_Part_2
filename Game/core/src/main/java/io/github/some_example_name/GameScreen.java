@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
+import com.badlogic.gdx.math.Rectangle;
 
 public class GameScreen implements Screen {
     private final MyGame game;
@@ -29,6 +30,9 @@ public class GameScreen implements Screen {
     private BusTicket busTicket;
     private BitmapFont font;
     private boolean canPickUpTicket = false;
+
+    private Rectangle busInteractionArea;
+    private boolean canEndGame = false;
 
     private final int MAP_WIDTH = 640;
     private final int MAP_HEIGHT = 640;
@@ -56,6 +60,11 @@ public class GameScreen implements Screen {
             RectangleMapObject rect = (RectangleMapObject) ticketObject;
             busTicket = new BusTicket(rect.getRectangle().x, rect.getRectangle().y);
         }
+
+         MapObject busObject = tiledMap.getLayers().get("Events").getObjects().get("Bus");
+        if (busObject != null && busObject instanceof RectangleMapObject) {
+            this.busInteractionArea = ((RectangleMapObject) busObject).getRectangle();
+        }
     }
 
     @Override
@@ -65,13 +74,23 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1); // Clear screen to black
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        if (busTicket != null && !busTicket.isCollected()) {
-            // Check distance between player and ticket. 16 is a good radius.
-            if (player.getPosition().dst(busTicket.getPosition()) < 16) {
-                busTicket.discover(); // Make the ticket visible
-                canPickUpTicket = true;
+        if (busTicket != null) {
+            if (!busTicket.isCollected()) {
+                // Check for ticket pickup
+                if (player.getPosition().dst(busTicket.getPosition()) < 16) {
+                    busTicket.discover();
+                    canPickUpTicket = true;
+                } else {
+                    canPickUpTicket = false;
+                }
             } else {
-                canPickUpTicket = false;
+                // If ticket IS collected, check for bus interaction
+                Rectangle playerRect = new Rectangle(player.getPosition().x, player.getPosition().y, 16, 16);
+                if (busInteractionArea != null && playerRect.overlaps(busInteractionArea)) {
+                    canEndGame = true;
+                } else {
+                    canEndGame = false;
+                }
             }
         }
 
@@ -88,8 +107,13 @@ public class GameScreen implements Screen {
         if (busTicket != null) {
             busTicket.render(batch);
         }
+
         if (canPickUpTicket) {
             font.draw(batch, "Press E to pick up", player.getPosition().x - 50, player.getPosition().y + 30);
+        }
+
+        if (canEndGame) {
+            font.draw(batch, "Press E to use ticket", player.getPosition().x - 50, player.getPosition().y + 30);
         }
 
         player.render(batch);
@@ -130,6 +154,10 @@ public class GameScreen implements Screen {
         if (canPickUpTicket && Gdx.input.isKeyJustPressed(Input.Keys.E)) {
             busTicket.collect();
             canPickUpTicket = false; // Prevent picking it up again
+        }
+
+        if (canEndGame && Gdx.input.isKeyJustPressed(Input.Keys.E)) {
+            game.setScreen(new WinScreen(game));
         }
 
         if (!isCellBlocked(newX, newY)) {
