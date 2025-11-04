@@ -22,23 +22,17 @@ public class Player
 	}
 
 	private Vector2 position;
-
 	private Texture frontTexture;
 	private Texture backTexture;
 	private Texture sideTexture;
-
 	private TextureRegion frontFrame;
 	private TextureRegion backFrame;
 	private TextureRegion sideFrame;
-
 	private TextureRegion currentFrame;
 
 	/**
 	 * Construct the player and place them in the given coordinates relative 
 	 * in the world. 
-	 * @param x absolute position of tile horizontally. 
-	 * @param y absolute position of tile vertically.  
-	 * @return New <code> Player </code> object.
 	 */
   public Player(float x, float y) 
   {
@@ -49,11 +43,11 @@ public class Player
         backTexture = new Texture("Player-back.png");
         sideTexture= new Texture ("Player-side.png");
 
-			frontFrame = new TextureRegion(frontTexture);
-			backFrame = new TextureRegion(backTexture);
-			sideFrame = new TextureRegion(sideTexture);
+		frontFrame = new TextureRegion(frontTexture);
+		backFrame = new TextureRegion(backTexture);
+		sideFrame = new TextureRegion(sideTexture);
 
-			currentFrame = frontFrame;
+		currentFrame = frontFrame;
 	}
 
 	/** 
