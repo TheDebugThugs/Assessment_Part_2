@@ -29,7 +29,7 @@ public class BusTicket {
     public void renderAsIcon(SpriteBatch batch, OrthographicCamera camera) {
         if (isCollected) {
             float iconSize = 32f; 
-            float padding = 10f;
+            float padding = 20f;
 
             // Calculate the top-right corner of the camera's view
             // We must account for the camera's zoom level
