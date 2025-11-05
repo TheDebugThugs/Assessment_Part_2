@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.Vector2;
 public class Player 
 {
 	/**
-	 * Enumeration of all the possible directions the player sprite can face.
+	 *enumeration of all the possible directions the player sprite can face.
 	 */
 	public enum Direction 
 	{
@@ -31,14 +31,14 @@ public class Player
 	private TextureRegion currentFrame;
 
 	/**
-	 * Construct the player and place them in the given coordinates relative 
+	 * construct the player and place them in the given coordinates relative 
 	 * in the world. 
 	 */
   public Player(float x, float y) 
   {
 			position = new Vector2(x, y);
 
-        // loading sprite under diff positions
+        //loading sprite under diff positions
         frontTexture = new Texture("Player-front.png"); 
         backTexture = new Texture("Player-back.png");
         sideTexture= new Texture ("Player-side.png");
@@ -51,8 +51,13 @@ public class Player
 	}
 
 	/** 
+<<<<<<< Updated upstream
 	 * Called to set the direction of the Player sprite.
 	 * @param newDirection the direction the player should face. 
+=======
+	 * called to set the direction of the Player sprite.
+	 * @param newDirection the  
+>>>>>>> Stashed changes
 	 * @see Direction
 	 */
 	public void setDirection(Direction newDirection)
@@ -97,8 +102,12 @@ public class Player
 	}
 
 	/**
+<<<<<<< Updated upstream
 	 * Get the player's position. 
 	 * @return The players x-by-y coordinates as a 2D vector.
+=======
+	 * getter function for player's position. 
+>>>>>>> Stashed changes
 	 */
 	public Vector2 getPosition() 
 	{
@@ -106,7 +115,11 @@ public class Player
 	}
 
 	/**
+<<<<<<< Updated upstream
 	 * Convenience method to be called by application to dispose of textures 
+=======
+	 * convenience function to be called by application to dispose of textures 
+>>>>>>> Stashed changes
 	 * of player's sprites when the application's dispose method is called. 
 	 * @see ApplicationAdapter 
 	 */

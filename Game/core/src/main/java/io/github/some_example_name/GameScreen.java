@@ -5,7 +5,10 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -38,6 +41,7 @@ public class GameScreen implements Screen {
 	private final GameTimer gameTimer;
 
     private BusTicket busTicket;
+    private Locker locker;
     private BitmapFont font;
     private boolean canPickUpTicket = false;
 
@@ -61,7 +65,9 @@ public class GameScreen implements Screen {
         viewport = new FitViewport(MAP_WIDTH, MAP_HEIGHT, camera);
 
         batch = new SpriteBatch();
-        player = new Player(145, 120); // Player's starting position
+        player = new Player(145, 80); //the player's starting position in their accommodation
+        locker = new Locker(31, 32); //change this to the real locker's coords
+
 
         font = new BitmapFont();
         
@@ -91,7 +97,10 @@ public class GameScreen implements Screen {
     public void render(float delta) {
         handleInput();
 
-        Gdx.gl.glClearColor(0, 0, 0, 1); // Clear screen to black
+        //updat the locker logic with the message and boost timer, update each fram to constantly check for a key press of e
+        locker.update(player, delta);
+
+        Gdx.gl.glClearColor(0, 0, 0, 1); //clear the screen to black
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 
@@ -137,6 +146,7 @@ public class GameScreen implements Screen {
             font.draw(batch, "Press E to use ticket", player.getPosition().x - 50, player.getPosition().y + 30);
         }
 
+        locker.render(batch); //this will draw the locker and the message before drawing the player -> the message will appear on top
         player.render(batch);
 
         if (busTicket != null && busTicket.isCollected()) {
@@ -160,6 +170,11 @@ public class GameScreen implements Screen {
 
     private void handleInput() {
         float moveSpeed = 1f;
+        //speed is different and should be quicker if the positive event has been triggered
+        if (locker != null && locker.isBoostActive()){
+            moveSpeed = 2f; //this will double the player's speed whilst the boost is active
+        }
+
         float newX = player.getPosition().x;
         float newY = player.getPosition().y;
 
@@ -229,6 +244,7 @@ public class GameScreen implements Screen {
         if (busTicket != null) {
             busTicket.dispose();
         }
+        locker.dispose();
         font.dispose();
 		uiStage.dispose();
     }
