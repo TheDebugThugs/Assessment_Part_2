@@ -95,7 +95,7 @@ public class Player
 	}
 
 	/**
-	 * Get the player's position.s 
+	 * Get the player's position in world. 
 	 * @return The players x-by-y coordinates as a 2D vector.
 	 */
 	public Vector2 getPosition() 
