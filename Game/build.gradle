@@ -15,6 +15,7 @@ buildscript {
 allprojects {
   apply plugin: 'eclipse'
   apply plugin: 'idea'
+  apply plugin: 'java'
 
   // This allows you to "Build and run using IntelliJ IDEA", an option in IDEA's Settings.
   idea {
@@ -67,6 +68,10 @@ subprojects {
     maven { url 'https://central.sonatype.com/repository/maven-snapshots/' }
     maven { url 'https://jitpack.io' }
   }
+}
+
+javadoc {
+    destinationDir = file("${buildDir}/docs/javadoc")
 }
 
 eclipse.project.name = 'YourProjectName' + '-parent'

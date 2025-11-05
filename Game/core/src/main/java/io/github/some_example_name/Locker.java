@@ -13,6 +13,7 @@ import com.badlogic.gdx.math.Vector2;
  * positive game event by allowing the player to find a "sweet treat" 
  * giving a temporary speed boost.
  */
+
 public class Locker {
 	private Texture texture;
 	private Vector2 position;

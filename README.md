@@ -6,7 +6,7 @@ Game for Cohort 2, Group 1.
 Documentation is done in the style of Javadoc. It can be generated using gradlew. Navigate into Game/ and execute the following command:
 
 Linux/MacOS Systems:
-`bash ./gradlew javadoc`
+`bash ./gradlew javadoc doc`
 
 Windows:
-`./gradlew.bat javadoc`
+`./gradlew.bat javadoc doc`
