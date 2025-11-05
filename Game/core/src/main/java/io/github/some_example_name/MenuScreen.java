@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 /**
  * <code> MenuScreen </code> implements a main menu screen, to let player pause, resume
  * and quit game. 
- * @see {@link com.badlogic.gdx.Screen} Screen.
+ * @see com.badlogic.gdx.Screen Screen.
  */
 
 public class MenuScreen implements Screen {
@@ -53,7 +53,7 @@ public class MenuScreen implements Screen {
 	/**
 	 * Process input then render new frame for the main menu. 
 	 * @param delta Time in seconds since last frame finished rendering.
-	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
+	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
 	@Override
 	public void render(float delta) {
@@ -80,14 +80,14 @@ public class MenuScreen implements Screen {
 	 * Resize UI Viewport when the window size is changed.
 	 * @param width Current width of window. 
 	 * @param height Current height of window. 
-	 * @see {@link com.badlogic.gdx.Screen#resize} Screen.resize().
+	 * @see com.badlogic.gdx.Screen#resize Screen.resize().
 	 */
 	@Override
 	public void resize(int width, int height) { viewport.update(width,height); }
 
 	/**
 	 * Dispose menu assets when menu is exited or program is quit. 
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	 * @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */
 	@Override
 	public void dispose() {

@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 /**
  * <code> WinScreen </code> implements a static screen with a congratulation message, and 
  * allows player to then quit or replay game.
- * @see {@link com.badlogic.gdx.Screen} Screen.
+ * @see com.badlogic.gdx.Screen Screen.
  */
 public class WinScreen implements Screen {
 	private final MyGame game;
@@ -38,7 +38,7 @@ public class WinScreen implements Screen {
 	/**
 	 * Process input then render new frame, including dialog, for the win menu. 
 	 * @param delta Time in seconds since last frame finished rendering.
-	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
+	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
 	@Override
 	public void render(float delta) {
@@ -60,7 +60,7 @@ public class WinScreen implements Screen {
 
    	/**
 	 * Dispose win menu assets when menu is exited or program is quit. 
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	 * @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */ 
 	@Override
 	public void dispose() {

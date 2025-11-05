@@ -14,9 +14,14 @@ public class Player
 	 */
 	public enum Direction 
 	{
+		/** Face North */
 		UP, 
+
+		/** Face South */
 		DOWN, 
+		/** Face West */
 		LEFT, 
+		/** Face East */
 		RIGHT
 	}
 
@@ -52,7 +57,7 @@ public class Player
 	/** 
 	 * Called to set the direction of the Player sprite.
 	 * @param newDirection the direction the player should face. 
-	 * @see {@link Direction} Direction.
+	 * @see Direction Direction.
 	 */
 	public void setDirection(Direction newDirection)
 	{
@@ -86,8 +91,8 @@ public class Player
 	 * </code> method, to draw the player using a SpriteBatch at the current 
 	 * player coordinates. 
 	 * @param batch SpriteBatch used by application to render all sprites.  
-	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch} SpriteBatch
-	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
+	 * @see com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch
+	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
 	public void render(SpriteBatch batch) 
 	{
@@ -106,7 +111,7 @@ public class Player
 	/**
 	 * Convenience method to be called by application to dispose of textures 
 	 * of player's sprites when the application's dispose method is called. 
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	 * @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */
 	public void dispose() 
 	{

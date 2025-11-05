@@ -73,18 +73,18 @@ public class Dean {
 	 * </code> method, to draw the dean using a SpriteBatch at the current 
 	 * dean coordinates. 
 	 * @param batch SpriteBatch used by application to render all sprites.  
-	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch} SpriteBatch
-	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
+	 * @see com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch
+	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
 	public void render(SpriteBatch batch) {
 		batch.draw(texture, position.x, position.y, 16, 16); 
-	} 
+	}
 
 	/**
 	 * Return 2D coordinates of dean.
 	 * @return 2D Vector x-by-y position of dean. 
 	 */
-	public Vector2 getPosition() {	return position; }
+	public Vector2 getPosition() {return position; }
 
 	/**
 	 * Return rectangle representing collision bounds of dean. 
@@ -95,7 +95,7 @@ public class Dean {
 	/**
 	 * Convenience method to be called by application to dispose of textures 
 	 * of player's sprites when the application's dispose method is called. 
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	  @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */
 	public void dispose() {
 		texture.dispose();

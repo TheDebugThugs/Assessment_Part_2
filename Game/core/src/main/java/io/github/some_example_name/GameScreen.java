@@ -23,7 +23,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 /** <code> GameScreen </code> implements the main gameplay logic and rendering as one class,
  * to process user input, and redraw the frames and update the game asset states as 
  * the game progresses.
- * @see {@link com.badlogic.gdx.Screen} Screen.
+ * @see com.badlogic.gdx.Screen Screen.
  */
 public class GameScreen implements Screen {
 	private final MyGame game;
@@ -111,7 +111,7 @@ public class GameScreen implements Screen {
 	 * Update game state from last frame, and render a new frame for the Screen
 	 * using updated assets. 
 	 * @param delta Time in seconds since last frame finished rendering.
-	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
+	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
 	@Override
 	public void render(float delta) {
@@ -260,7 +260,7 @@ public class GameScreen implements Screen {
 	 * to move onto it.Useful for checking collisions when moving player or another
 	 * entity.
 	 * @param x Horizontal position of cell in the world.
-	 * @param x Vertical position of cell in the world.
+	 * @param y Vertical position of cell in the world.
 	 * @return True if cell blocks entities to move onto it, False if entities can move onto it. 
 	 */ 
 	public boolean isCellBlocked(float x, float y) {
@@ -285,7 +285,7 @@ public class GameScreen implements Screen {
 	 * Resize UI and game map viewports when the window size is changed.
 	 * @param width Current width of window. 
 	 * @param height Current height of window. 
-	 * @see {@link com.badlogic.gdx.Screen#resize} Screen.resize().
+	 * @see com.badlogic.gdx.Screen#resize Screen.resize().
 	 */
 	@Override
 	public void resize(int width, int height) {
@@ -298,7 +298,7 @@ public class GameScreen implements Screen {
 	/**
 	 * Dipose of all assets and UI elements when game screen is left i.e 
 	 * when the player wins the game or quits.
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	 * @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */
 	@Override
 	public void dispose() {

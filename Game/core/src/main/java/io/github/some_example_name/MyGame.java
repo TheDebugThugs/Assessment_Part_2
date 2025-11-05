@@ -5,8 +5,8 @@ import com.badlogic.gdx.Game;
 /**
  * <code> MyGame </code> handles creating and presenting the game from 
  * the different screens. 
- * @see {@link com.badlogic.gdx.game } Game
- * @see {@link com.badlogic.gdx.Screen } Screen 
+ * @see com.badlogic.gdx.Game Game 
+ * @see com.badlogic.gdx.Screen Screen 
  */
 public class MyGame extends Game {
 	/** Create game, starting at the menu score. */ 

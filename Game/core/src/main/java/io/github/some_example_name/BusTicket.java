@@ -33,7 +33,7 @@ public class BusTicket {
 	/**
 	 * Render ticket sprite within given sprite batch.
 	 * @param batch SpriteBatch to render world sprite in. 
-	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch} SpriteBatch.
+	 * @see com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch.
 	 */
 	public void render(SpriteBatch batch) {
 		if (isDiscovered && !isCollected) {
@@ -46,8 +46,8 @@ public class BusTicket {
 	 * inventory. 
 	 * @param batch SpriteBatch to render UI sprite in. 
 	 * @param camera Camera connected to batch. 
-	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch} SpriteBatch.
-	 * @see {@link com.badlogic.gdx.graphics.OrthographicCamera} OrthographicCamera
+	 * @see com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch.
+	 * @see com.badlogic.gdx.graphics.OrthographicCamera OrthographicCamera
 	 */
 	public void renderAsIcon(SpriteBatch batch, OrthographicCamera camera) {
 		if (isCollected) {

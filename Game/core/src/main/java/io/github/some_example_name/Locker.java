@@ -71,8 +71,8 @@ public class Locker {
 	 * </code> method, to draw the locker and it's label using a 
 	 * SpriteBatch at it's coordinates. 
 	 * @param batch SpriteBatch used by application to render all sprites.  
-	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch} SpriteBatch
-	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
+	 * @see com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch
+	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
 	public void render(SpriteBatch batch){
 		batch.draw(texture, position.x, position.y);
@@ -88,7 +88,7 @@ public class Locker {
 	/**
 	 * Convenience method to be called by application to dispose of texture 
 	 * and font's locker's sprites when the application's dispose method is called. 
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	 * @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */
 	public void dispose(){
 		texture.dispose();
