@@ -18,7 +18,6 @@ import com.badlogic.gdx.audio.Sound;
  *
  * @since 2025-11-04 19:28:26
  */
-
 public class GameTimer {
 	
 	private Float timeLeft;
@@ -32,7 +31,9 @@ public class GameTimer {
 	 */ 
 	public GameTimer(Skin skin, Table table) {
 		this.timeLeft = 300f;	
-		this.timerDingSFX = Gdx.audio.newSound(Gdx.files.internal("ding.wav"));
+		this.timerDingSFX = Gdx.audio.newSound(
+			Gdx.files.internal("ding.wav")
+		);
 		instantiateLabel(skin,table);
 	}
 
@@ -46,14 +47,16 @@ public class GameTimer {
 	public GameTimer(Skin skin, Table table, float seconds) {
 		this.timeLeft = seconds;	
 
-		this.timerDingSFX = Gdx.audio.newSound(Gdx.files.internal("ding.wav"));
+		this.timerDingSFX = Gdx.audio.newSound(
+			Gdx.files.internal("ding.wav")
+		);
 		instantiateLabel(skin,table);
 	} 
 
 	
 	/**
- 	 * Return the time in formatted in mm:ss for time left.  
- 	 * @return String formatted in mm:ss of <code> timeLeft </code>.
+ 	 * Return the time in formatted in mm:ss for time left. 
+ 	 * @return String formatted in mm:ss of time left.
 	 */
 	@Override 
 	public String toString() { 	
@@ -106,5 +109,4 @@ public class GameTimer {
 		this.timerLabel = new Label("", skin);
 		table.add(this.timerLabel).row();
 	}
-
 }
