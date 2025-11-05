@@ -87,7 +87,7 @@ public class Player
 	 * player coordinates. 
 	 * @param batch SpriteBatch used by application to render all sprites.  
 	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch} SpriteBatch
-	 * @see {@link com.badlogic.gdx.Screen#dispose} Screen.dispose().
+	 * @see {@link com.badlogic.gdx.Screen#render} Screen.render().
 	 */
 	public void render(SpriteBatch batch) 
 	{
