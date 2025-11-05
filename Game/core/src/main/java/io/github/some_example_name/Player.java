@@ -51,13 +51,8 @@ public class Player
 	}
 
 	/** 
-<<<<<<< Updated upstream
 	 * Called to set the direction of the Player sprite.
 	 * @param newDirection the direction the player should face. 
-=======
-	 * called to set the direction of the Player sprite.
-	 * @param newDirection the  
->>>>>>> Stashed changes
 	 * @see Direction
 	 */
 	public void setDirection(Direction newDirection)
@@ -102,12 +97,8 @@ public class Player
 	}
 
 	/**
-<<<<<<< Updated upstream
-	 * Get the player's position. 
+	 * Get the player's position.s 
 	 * @return The players x-by-y coordinates as a 2D vector.
-=======
-	 * getter function for player's position. 
->>>>>>> Stashed changes
 	 */
 	public Vector2 getPosition() 
 	{
@@ -115,11 +106,7 @@ public class Player
 	}
 
 	/**
-<<<<<<< Updated upstream
 	 * Convenience method to be called by application to dispose of textures 
-=======
-	 * convenience function to be called by application to dispose of textures 
->>>>>>> Stashed changes
 	 * of player's sprites when the application's dispose method is called. 
 	 * @see ApplicationAdapter 
 	 */

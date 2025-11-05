@@ -13,21 +13,11 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-<<<<<<< Updated upstream
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.math.Vector2;
-=======
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.viewport.FitViewport;
->>>>>>> Stashed changes
 
 public class GameScreen implements Screen {
     private final MyGame game;
@@ -70,8 +60,8 @@ public class GameScreen implements Screen {
         viewport = new FitViewport(MAP_WIDTH, MAP_HEIGHT, camera);
 
         batch = new SpriteBatch();
-        player = new Player(145, 80); //the player's starting position in their accommodation
-        locker = new Locker(31, 32); //change this to the real locker's coords
+        player = new Player(145, 70); //the player's starting position in their accommodation
+        locker = new Locker(495, 575); //the locker's position in the computer science building on the map
 
 
         font = new BitmapFont();
