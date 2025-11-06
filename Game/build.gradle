@@ -24,6 +24,9 @@ allprojects {
       testOutputDir file('build/classes/java/test')
     }
   }
+  javadoc {
+    destinationDir = file("build/docs/javadoc")
+  }
 }
 
 configure(subprojects) {
@@ -70,8 +73,8 @@ subprojects {
   }
 }
 
-javadoc {
-    destinationDir = file("${buildDir}/docs/javadoc")
-}
+// Source - https://stackoverflow.com/questions/21209253/gradle-does-not-generate-javadocs
+// Posted by tintin
+// Retrieved 2025-11-06, License - CC BY-SA 3.0
 
 eclipse.project.name = 'YourProjectName' + '-parent'
