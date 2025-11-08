@@ -80,7 +80,7 @@ public class GameScreen implements Screen {
 		batch = new SpriteBatch();
 		player = new Player(145, 70); 
 		locker = new Locker(495, 575); 
-		dean = new Dean(390, 400, player, this); 
+		dean = new Dean(90, 450, player, this); 
 		friend = new NPC(560, 300); 
 
 		catchCounterFont = new BitmapFont();
@@ -154,7 +154,8 @@ public class GameScreen implements Screen {
 
 		if (player.getPosition().dst(dean.getPosition()) < 16f) {
 		    player.getPosition().set(145,70); 
-		    timesCaughtByDean ++;
+			timesCaughtByDean++;
+		    dean.resetToStart(timesCaughtByDean); //send the dean back to his starting position or other side of the map to ensure he can't spawn camp the player
 		}
 
 		locker.update(player, delta);
@@ -195,6 +196,18 @@ public class GameScreen implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 
+		//switch to screen coordinates for the UI elements
+		batch.setProjectionMatrix(uiStage.getCamera().combined);
+
+		//draw the three events encountered checklists in the top left hand corner of the screen
+		//events get updates using a ternary operator which is like a condensed if/else statement -> it is set out like: (condition ? vali_if_true : value_if_false)
+		font.draw(batch, "Positive Event Encountered = " + (locker.isBoostActive() ? "1" : "0") + "/1", 35, 630);//this means if the locker boost is active (the bus ticket has been picked up) display that the event 1/1 has been enocuntered otherwide 0/1
+		font.draw(batch, "Negative Event Encountered = " + (timesCaughtByDean > 0 ? "1" : "0") + "/1", 35, 610);
+		font.draw(batch, "Hidden Event Encountered = " + (busTicket.isCollected() ? "1" : "0") + "/1", 35, 590);
+		
+		//switch back to the game coordinates for game objects
+		batch.setProjectionMatrix(camera.combined);
+
 		if (busTicket != null) {
 		    busTicket.render(batch);
 		}
@@ -217,7 +230,7 @@ public class GameScreen implements Screen {
 		    );
 		}
 			
-		// Messages will appear on top by rendering player last. 
+		//Messages will appear on top by rendering player last. 
 		locker.render(batch); 		
 		dean.render(batch);
 		friend.render(batch);
@@ -244,10 +257,9 @@ public class GameScreen implements Screen {
 			game.setScreen(new MenuScreen(game));
 		}
 
-		gameTimer.decrementTimer(delta);
 		if (gameTimer.getTimeLeft() == 0) { 
 			gameTimer.onTimeUp();
-			game.setScreen(new MenuScreen(game));
+			game.setScreen(new GameOverScreen(game));
 		}
 		uiStage.act(delta);
 		uiStage.draw();
@@ -294,7 +306,6 @@ public class GameScreen implements Screen {
 		else if (canPickUpTicket && Gdx.input.isKeyJustPressed(Input.Keys.E)) {
 		    busTicket.collect();
 		    canPickUpTicket = false; 
-
 		} 
 
 		// Change pause functionality to use the P key, include this in docstrings

@@ -61,8 +61,8 @@ public class WinScreen implements Screen {
 
 		batch.begin();
 		font.draw(batch, "You Win!", 250, 350);
-		font.draw(batch, "Final Score = " + finalScore, 200, 310);
-		font.draw(batch, "Dean Penalty = " + timesCaught * 5, 200, 270);
+		font.draw(batch, "Final Score = " + finalScore, 188, 310);
+		font.draw(batch, "Dean Penalty = " + timesCaught * 5, 188, 270);
 		font.draw(batch, "Press SPACE to return to menu", 100, 150);
 		batch.end();
 

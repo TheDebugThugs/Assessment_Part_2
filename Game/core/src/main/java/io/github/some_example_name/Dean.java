@@ -2,8 +2,8 @@ package io.github.some_example_name;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 
 /** <code> Dean </code> is the main enemy of the game, which chases the player's 
  * character to attempt to attack them, resetting them to the start of the game.
@@ -11,6 +11,8 @@ import com.badlogic.gdx.math.Rectangle;
 
 public class Dean {
 	private Vector2 position;
+	private Vector2 startPosition;
+	private Vector2 velocity;
 	private Texture texture;
 	private Player player;
 	private GameScreen gameScreen;
@@ -25,9 +27,11 @@ public class Dean {
 	 */
 	public Dean(float x, float y, Player player, GameScreen gameScreen){
 		this.position = new Vector2(x, y);
+		this.startPosition = new Vector2(x,y); //store the starting position of the dean
 		this.texture = new Texture("Dean-front.png");
 		this.player = player;
 		this.gameScreen = gameScreen;
+		this.velocity = new Vector2();
 	}
 
 	/**
@@ -36,7 +40,7 @@ public class Dean {
 	 */
 	public void update(float delta) {
 		Vector2 direction = new Vector2(player.getPosition()).sub(position); 
-		direction.nor();
+		direction.nor(); //normalise 
 
 		float newX = position.x + direction.x * speed; 
 		float newY = position.y + direction.y * speed; 
@@ -67,6 +71,18 @@ public class Dean {
 		    return;
 		}
 	}
+
+	/**
+	 * Reset the dean to its starting position when the player is caught or to the other side of the map
+	 */
+	public void resetToStart(int caughtNumber) {
+		if (caughtNumber % 2 == 0){
+			//if the number of times caught by the dean is even send them to a new positon than their starting, otherwise send them to the start
+			position.set(startPosition);
+		}else{
+			position.set(390, 400);
+		}
+	}		
 
 	/**
 	 * Convenience method to be called by the game screen's <code> render() 
