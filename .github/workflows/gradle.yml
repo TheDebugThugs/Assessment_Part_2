@@ -33,7 +33,7 @@ jobs:
       working-directory: Game
       run: |
         chmod +x gradlew
-        ./gradlew build jacocoTestReport
+        ./gradlew build
 
     - name: Upload JaCoCo coverage report as a workflow artifact
       uses: actions/upload-artifact@v4.3.1
