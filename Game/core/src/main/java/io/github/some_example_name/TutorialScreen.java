@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
 /**
- * 
+ *
  */
 
 public class TutorialScreen implements Screen {
@@ -30,7 +30,7 @@ public class TutorialScreen implements Screen {
         batch = new SpriteBatch();
 
         //load the tutorial screen image
-        tutorialImage = new Texture("How to Play Screen.png");
+        tutorialImage = new Texture("Tutorial_how_to_play.png");
 
         viewport = new FitViewport(MENU_WIDTH, MENU_HEIGHT, camera);
     }
@@ -41,7 +41,7 @@ public class TutorialScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		camera.update();
-		batch.setProjectionMatrix(camera.combined);    
+		batch.setProjectionMatrix(camera.combined);
 
         batch.begin();
         //draw the image to fill the screen
@@ -78,9 +78,4 @@ public class TutorialScreen implements Screen {
 
     @Override
     public void hide(){}
-
-
-
-
-
 }
