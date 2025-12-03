@@ -11,7 +11,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 
 /**
  * <code> MenuScreen </code> implements a main menu screen, to let player pause, resume
- * and quit game. 
+ * and quit game.
  * @see com.badlogic.gdx.Screen Screen.
  */
 
@@ -46,12 +46,12 @@ public class MenuScreen implements Screen {
 
 	/**
 	 * Show main menu screen.
-	 */ 
+	 */
 	@Override
 	public void show() {}
 
 	/**
-	 * Process input then render new frame for the main menu. 
+	 * Process input then render new frame for the main menu.
 	 * @param delta Time in seconds since last frame finished rendering.
 	 * @see com.badlogic.gdx.Screen#render Screen.render().
 	 */
@@ -65,28 +65,32 @@ public class MenuScreen implements Screen {
 
 		batch.begin();
 		font.draw(batch, "Escape from University", 170, 350);
+        font.draw(batch, "Press L to view Leaderboard", 140, 300);
 		font.draw(batch, "Press SPACE to Start", 175, 250);
 		font.draw(batch, "Press ESC to Exit", 198, 200);
 		batch.end();
 
+        int finalScore = 0;
 		if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
 		    game.setScreen(new TutorialScreen(game));
 		} else if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
-		    Gdx.app.exit();
-		}
+            Gdx.app.exit();
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.L)){
+            game.setScreen(new LeaderBoard(game,finalScore));
+        }
 	}
 
 	/**
 	 * Resize UI Viewport when the window size is changed.
-	 * @param width Current width of window. 
-	 * @param height Current height of window. 
+	 * @param width Current width of window.
+	 * @param height Current height of window.
 	 * @see com.badlogic.gdx.Screen#resize Screen.resize().
 	 */
 	@Override
 	public void resize(int width, int height) { viewport.update(width,height); }
 
 	/**
-	 * Dispose menu assets when menu is exited or program is quit. 
+	 * Dispose menu assets when menu is exited or program is quit.
 	 * @see com.badlogic.gdx.Screen#dispose Screen.dispose().
 	 */
 	@Override
