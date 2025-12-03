@@ -63,11 +63,15 @@ public class WinScreen implements Screen {
 		font.draw(batch, "You Win!", 250, 350);
 		font.draw(batch, "Final Score = " + finalScore, 188, 310);
 		font.draw(batch, "Dean Penalty = " + timesCaught * 5, 188, 270);
+		font.draw(batch, "Press L to view Leaderboard", 100, 190);
 		font.draw(batch, "Press SPACE to return to menu", 100, 150);
 		batch.end();
 
 		if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
 		    game.setScreen(new MenuScreen(game));
+		}
+		if (Gdx.input.isKeyJustPressed(Input.Keys.L)) {
+		    game.setScreen(new LeaderBoard(game, finalScore));
 		}
 	}
 

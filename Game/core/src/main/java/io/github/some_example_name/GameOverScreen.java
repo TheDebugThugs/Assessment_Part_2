@@ -52,11 +52,14 @@ public class GameOverScreen implements Screen {
 
         batch.begin();
         font.draw(batch, "You lost!", 255, 350);
-        font.draw(batch, "Press SPACE to continue", 135, 250);
+        font.draw(batch, "Press SPACE to continue or press L to view the leaderboard", 135, 250);
         batch.end();
 
         if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
             game.setScreen(new MenuScreen(game));
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.L)) {
+            game.setScreen(new LeaderBoard(game, 0)); //final score is 0 as player lost
         }
     }
 
@@ -100,4 +103,3 @@ public class GameOverScreen implements Screen {
     @Override
     public void hide() {}
 }
-

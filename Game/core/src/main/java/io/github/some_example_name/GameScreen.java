@@ -280,25 +280,27 @@ public class GameScreen implements Screen {
 		    moveSpeed = 2f; 
 		}
 
+		// adding in arrow keys here as well as WASD for movement
+
 		float newX = player.getPosition().x;
 		float newY = player.getPosition().y;
 
-		if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+		if ((Gdx.input.isKeyPressed(Input.Keys.W))||(Gdx.input.isKeyPressed(Input.Keys.UP))) {
 		    newY += moveSpeed;
 		    player.setDirection(Player.Direction.UP);
 		} 
 		
-		else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+		else if ((Gdx.input.isKeyPressed(Input.Keys.S))||(Gdx.input.isKeyPressed(Input.Keys.DOWN))) {
 		    newY -= moveSpeed;
 		    player.setDirection(Player.Direction.DOWN);
 		} 
 		
-		else if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+		else if ((Gdx.input.isKeyPressed(Input.Keys.A))||(Gdx.input.isKeyPressed(Input.Keys.LEFT))) {
 		    newX -= moveSpeed;
 		    player.setDirection(Player.Direction.LEFT);
 		} 
 
-		else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+		else if ((Gdx.input.isKeyPressed(Input.Keys.D))||(Gdx.input.isKeyPressed(Input.Keys.RIGHT))) {
 		    newX += moveSpeed;
 		    player.setDirection(Player.Direction.RIGHT);
 		}
