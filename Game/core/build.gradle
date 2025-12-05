@@ -14,4 +14,22 @@ dependencies {
   if(enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
   }
+  // JUnit 5 (Test Engine)
+  testImplementation "org.junit.jupiter:junit-jupiter:5.8.1"
+  testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+
+  // Mockito (fake Textures/Sounds)
+  testImplementation "org.mockito:mockito-core:4.0.0"
+
+  // LibGDX Headless Backend 
+  testImplementation "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
+  testImplementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
 }
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    events "passed", "skipped", "failed"
+  }
+}
+  
